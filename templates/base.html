@@ -43,18 +43,12 @@
                     <a class="nav-link active" aria-current="page" href="/logout/">Sign Out {{ user.username }}</a>
                 </li>
             {% endif %}
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        Directors
-                    </a>
-{#                    <ul class="dropdown-menu">#}
-{#                        {% for director in directors %}#}
-{#                        <li><a class="dropdown-item" href="/director/{{ director.id }}/films/">{{ director.name }}</a></li>#}
-{#                        {% endfor %}#}
-{#                    </ul>#}
-                </li>
-
+                <form class="d-flex" role="search" method="get" action="/search/">
+                    <input class="form-control me-2" type="search" placeholder="Search"
+                           name="search_word"
+                           aria-label="Search" value="{{ search_word }}">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </ul>
         </div>
     </div>

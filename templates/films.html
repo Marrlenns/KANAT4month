@@ -1,6 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
+
+
     {% for film in films %}
         <a href="{{ film.id }}"><h3>{{ film.title }}</h3></a>
     {% endfor %}
+
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item {% if page == 1 %}disabled{% endif %}"><a class="page-link" href="/films/?page={{ prev_page }}">Previous</a></li>
+            {% for button in buttons %}
+                <li class="page-item {% if button == page %}active{% endif %}">
+                    <a class="page-link"
+                       href="/films/?page={{ button }}"> {{ button }} </a></li>
+            {% endfor %}
+            <li class="page-item {% if page == pages %}disabled{% endif %}"><a class="page-link" href="/films/?page={{ next_page }}">Next</a></li>
+        </ul>
+    </nav>
 {% endblock %}

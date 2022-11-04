@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form action="/director/create/" method="post">
+    <form action="/director/create/" method="post" style="padding: 30px 150px;">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Create" class="btn btn-dark">

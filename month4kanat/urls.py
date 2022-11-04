@@ -28,4 +28,7 @@ urlpatterns = [
     path('director/<int:director_id>/films/', director_films),
     path('films/create/', create_film),
     path('director/create/', create_director),
+    path('register/', register_),
+    path('login/', login_),
+    path('search/', search)
 ]
