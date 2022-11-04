@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for director in directors %}
+        <a href="/director/{{ director.id }}/films/"><h3>{{ director.name }}</h3></a>
+    {% endfor %}
+{% endblock %}
